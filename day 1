@@ -1,0 +1,115 @@
+1 Factorial
+import java.util.Scanner;
+public class FactorialIterative {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter a number to find its factorial: ");
+        int num = scanner.nextInt();
+        scanner.close();
+        long factorial = 1;
+        for (int i = 1; i <= num; i++) {
+            factorial *= i;
+        }
+        System.out.println("Factorial of " + num + " = " + factorial);
+    }
+}
+
+
+2 COUNT OF VOWELS
+import java.util.Scanner;
+
+public class CountVowels {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter a string: ");
+        String input = scanner.nextLine();
+        scanner.close();
+        
+        int vowelsCount = countVowels(input);
+        
+        System.out.println("Number of vowels in the string: " + vowelsCount);
+    }
+                                                                                                     
+    public static int countVowels(String str) {
+        int count = 0;
+        str = str.toLowerCase(); 
+        
+        for (int i = 0; i < str.length(); i++) {
+            char ch = str.charAt(i);
+            if (ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u') {
+                count++;
+            }
+        }
+        
+        return count;
+    } 
+}
+
+3 REVERSED STRING
+
+import java.util.Scanner;
+
+public class ReverseString {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter a string to reverse: ");
+        String input = scanner.nextLine();
+        scanner.close();
+        
+        String reversedString = reverseUsingStringBuilder(input);
+        
+        System.out.println("Reversed string: " + reversedString);
+    }
+    
+    public static String reverseUsingStringBuilder(String str) {
+        StringBuilder sb = new StringBuilder(str);
+        return sb.reverse().toString();
+    }
+}
+
+4 ALPHABETICALLY REVERSE
+  import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.List;
+
+public class ReverseAlphabetical {
+    public static void main(String[] args) {
+        List<String> fruits = new ArrayList<>();
+        fruits.add("Apple");
+        fruits.add("Banana");
+        fruits.add("Orange");
+        fruits.add("Pineapple");
+        fruits.add("Grapes");
+        Collections.sort(fruits, new Comparator<String>() {
+            @Override
+            public int compare(String o1, String o2) {
+                return o2.compareTo(o1);
+            }
+        });
+        System.out.println("Fruits sorted in reverse alphabetical order:");
+        for (String fruit : fruits) {
+            System.out.println(fruit);
+        }
+    }
+}
+
+5 HALLOW SQUARE PATTERN
+  public class HollowSquarePattern {
+    public static void main(String[] args) {
+        int rows = 5; 
+        for (int i = 1; i <= rows; i++) {
+            for (int j = 1; j <= rows; j++) {
+                if (i == 1 || i == rows || j == 1 || j == rows) {
+                    System.out.print("*");
+                } else {
+                    System.out.print(" ");
+                }
+            }
+            System.out.println();
+        }
+    }
+}
+
+
+
