@@ -110,6 +110,21 @@ public class ReverseAlphabetical {
         }
     }
 }
+6 NUMBER PATTERN
+public class NumberPattern {
+    public static void main(String[] args) {
+        int rows = 4; 
+       
+        for (int i = 1; i <= rows; i++) {
+            // Print the number i, repeated i times
+            for (int j = 1; j <= i; j++) {
+                System.out.print(i + " ");
+            }
+            System.out.println();
+        }
+    }
+}
+
 
 
 
