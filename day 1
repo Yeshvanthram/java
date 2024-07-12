@@ -28,7 +28,7 @@ public class CountVowels {
         int vowelsCount = countVowels(input);
         
         System.out.println("Number of vowels in the string: " + vowelsCount);
-    }
+}
                                                                                                      
     public static int countVowels(String str) {
         int count = 0;
@@ -116,7 +116,6 @@ public class NumberPattern {
         int rows = 4; 
        
         for (int i = 1; i <= rows; i++) {
-            // Print the number i, repeated i times
             for (int j = 1; j <= i; j++) {
                 System.out.print(i + " ");
             }
@@ -124,6 +123,120 @@ public class NumberPattern {
         }
     }
 }
+7	Write a program to print the below pattern
+1
+2  2
+3  3  3    
+4  4   4   4
+public class NumberPattern {
+    public static void main(String[] args) {
+        int rows = 4; 
+
+        for (int i = 1; i <= rows; i++) {
+            // Print the number 'i' for 'i' times
+            for (int j = 1; j <= i; j++) {
+                System.out.print(i + "  "); 
+            }
+            System.out.println();
+        }
+    }
+}
+8 MATRIX ADDITION
+import java.util.Scanner;
+
+public class MatrixAddition3x3 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int[][] matrixA = new int[3][3];
+        int[][] matrixB = new int[3][3];
+        int[][] sumMatrix = new int[3][3];
+        System.out.println("Enter elements of the first 3x3 matrix:");
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
+                matrixA[i][j] = scanner.nextInt();
+            }
+        }
+        System.out.println("Enter elements of the second 3x3 matrix:");
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
+                matrixB[i][j] = scanner.nextInt();
+            }
+        }
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
+                sumMatrix[i][j] = matrixA[i][j] + matrixB[i][j];
+            }
+        }
+        System.out.println("Resulting matrix after addition:");
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
+                System.out.print(sumMatrix[i][j] + " ");
+            }
+            System.out.println();
+        }
+
+        scanner.close();
+    }
+}
+9 REMOVE VOWELS FROM A STRING
+import java.util.Scanner;
+
+public class RemoveVowels {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter a string: ");
+        String input = scanner.nextLine();
+        String result = removeVowels(input);
+        System.out.println("String after removing vowels: " + result);
+
+        scanner.close();
+    }
+    public static String removeVowels(String str) {
+        return str.replaceAll("[AEIOUaeiou]", ""); // Remove both uppercase and lowercase vowels
+    }
+}
+10 RIGHT TRIANGLE STAR PATTERN
+import java.util.Scanner;
+
+public class RightTriangleStarPattern {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter the height of the triangle: ");
+        int height = scanner.nextInt();
+        for (int i = 1; i <= height; i++) {
+            for (int j = 1; j <= i; j++) {
+                System.out.print("* ");
+            }
+            System.out.println();
+        }
+
+        scanner.close();
+    }
+}
+11 INVERTED FULL PYRAMID PATTERN
+import java.util.Scanner;
+public class InvertedFullPyramid {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter the height of the inverted pyramid: ");
+        int height = scanner.nextInt();
+        for (int i = height; i >= 1; i--) {
+            for (int j = height; j > i; j--) {
+                System.out.print(" ");
+            }
+            for (int k = 1; k <= (2 * i - 1); k++) {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+
+        scanner.close();
+    }
+}
+
+
+
+
 
 
 
