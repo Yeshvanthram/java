@@ -233,6 +233,119 @@ public class InvertedFullPyramid {
         scanner.close();
     }
 }
+12 Write a program to print the below pattern
+1
+4     9
+16   25    36
+49   64    81    100
+public class PerfectSquarePattern {
+    public static void main(String[] args) {
+        int rows = 4; 
+        int number = 1; 
+
+        for (int i = 1; i <= rows; i++) {
+           
+            for (int j = 1; j <= i; j++) {
+                System.out.print((number * number) + "\t");
+                number++; 
+            }
+            System.out.println();
+        }
+    }
+}
+13 Write a program to print the below pattern
+1
+2 2
+3  3  3    
+4  4   4   4
+3  3  3
+2  2
+1
+public class DiamondNumberPattern {
+    public static void main(String[] args) {
+        int n = 4;
+
+        // Upper part of the pattern
+        for (int i = 1; i <= n; i++) {
+            for (int j = 1; j <= i; j++) {
+                System.out.print(i + "  "); 
+            }
+            System.out.println(); 
+        }
+
+        // Lower part of the pattern
+        for (int i = n - 1; i >= 1; i--) {
+            for (int j = 1; j <= i; j++) {
+                System.out.print(i + "  "); 
+            }
+            System.out.println(); 
+        }
+    }
+}
+14 Write a program to print hollow Square Dollar pattern?
+import java.util.Scanner;
+
+public class HollowSquareDollarPattern {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Prompt the user for the size of the square
+        System.out.print("Enter the size of the hollow square: ");
+        int size = scanner.nextInt();
+
+        // Loop to print the hollow square pattern
+        for (int i = 1; i <= size; i++) {
+            for (int j = 1; j <= size; j++) {
+                // Print dollar signs on the borders, and space inside
+                if (i == 1 || i == size || j == 1 || j == size) {
+                    System.out.print("$ ");
+                } else {
+                    System.out.print("  "); // Print space for hollow part
+                }
+            }
+            // Move to the next line after printing each row
+            System.out.println();
+        }
+
+        scanner.close();
+    }
+}
+15. Write a program to print inverted pyramid pattern.
+Input: no of rows: 3
+Output 
+    ***
+     *
+      *
+import java.util.Scanner;
+
+public class InvertedPyramidPattern {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Prompt the user for the number of rows
+        System.out.print("Enter the number of rows: ");
+        int rows = scanner.nextInt();
+
+        // Loop to print the inverted pyramid pattern
+        for (int i = rows; i >= 1; i--) {
+            // Print leading spaces
+            for (int j = 1; j <= rows - i; j++) {
+                System.out.print(" ");
+            }
+            // Print stars for the current row
+            for (int k = 1; k <= (2 * i - 1); k++) {
+                System.out.print("*");
+            }
+            // Move to the next line after printing each row
+            System.out.println();
+        }
+
+        scanner.close();
+    }
+}
+
+
+
 
 
 
