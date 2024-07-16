@@ -514,8 +514,6 @@ public class CharacterPattern {
 
 2. Program to print hollow square symbol pattern:
 
-java
-Copy code
 import java.util.Scanner;
 
 public class HollowSquare {
@@ -538,8 +536,6 @@ public class HollowSquare {
 }
 23. Program to print the below pattern:
 
-java
-Copy code
 public class NumberPattern {
     public static void main(String[] args) {
         for (int i = 1; i <= 4; i++) {
@@ -552,8 +548,6 @@ public class NumberPattern {
 }
 24. Program to print the below pattern:
 
-java
-Copy code
 public class SquarePattern {
     public static void main(String[] args) {
         for (int i = 1; i <= 4; i++) {
@@ -566,8 +560,6 @@ public class SquarePattern {
 }
 25. Program to print the below pattern:
 
-java
-Copy code
 public class PyramidPattern {
     public static void main(String[] args) {
         for (int i = 1; i <= 4; i++) {
@@ -586,8 +578,6 @@ public class PyramidPattern {
 }
 26. Program to print hollow square dollar pattern:
 
-java
-Copy code
 import java.util.Scanner;
 
 public class HollowDollarSquare {
@@ -610,8 +600,7 @@ public class HollowDollarSquare {
 }
 27. Program to print inverted pyramid pattern:
 
-java
-Copy code
+
 import java.util.Scanner;
 
 public class InvertedPyramid {
@@ -633,8 +622,7 @@ public class InvertedPyramid {
 }
 28. Program to reverse a number using loop:
 
-java
-Copy code
+
 import java.util.Scanner;
 
 public class ReverseNumber {
@@ -654,8 +642,6 @@ public class ReverseNumber {
 }
 29. Program to convert decimal to binary and print the reverse:
 
-java
-Copy code
 import java.util.Scanner;
 
 public class DecimalToBinaryReverse {
@@ -671,8 +657,6 @@ public class DecimalToBinaryReverse {
 }
 30. Program to check voting eligibility:
 
-java
-Copy code
 import java.util.Scanner;
 
 public class VotingEligibility {
@@ -690,8 +674,6 @@ public class VotingEligibility {
 }
 31. Program to find the LCM and GCD of n numbers:
 
-java
-Copy code
 import java.util.Scanner;
 
 public class LCMAndGCD {
@@ -731,8 +713,6 @@ public class LCMAndGCD {
 }
 32. Program to calculate simple interest:
 
-java
-Copy code
 import java.util.Scanner;
 
 public class SimpleInterest {
@@ -752,8 +732,6 @@ public class SimpleInterest {
 }
 33. Program to print the Fibonacci series:
 
-java
-Copy code
 import java.util.Scanner;
 
 public class FibonacciSeries {
@@ -774,8 +752,6 @@ public class FibonacciSeries {
 }
 34. Program to find even sum of Fibonacci series till number N:
 
-java
-Copy code
 import java.util.Scanner;
 
 public class EvenSumFibonacci {
@@ -798,8 +774,6 @@ public class EvenSumFibonacci {
 }
 35. Program to print numbers from M to N by skipping K numbers:
 
-java
-Copy code
 import java.util.Scanner;
 
 public class SkipNumbers {
@@ -819,8 +793,6 @@ public class SkipNumbers {
 }
 36. Program to print all composite numbers between a and b:
 
-java
-Copy code
 import java.util.Scanner;
 
 public class CompositeNumbers {
@@ -852,8 +824,6 @@ public class CompositeNumbers {
 }
 37. Program to find the factorial of n:
 
-java
-Copy code
 import java.util.Scanner;
 
 public class Factorial {
@@ -875,8 +845,6 @@ public class Factorial {
 }
 38. Program to find whether the year of the given date is a leap year or not:
 
-java
-Copy code
 import java.util.Scanner;
 
 public class LeapYear {
@@ -897,8 +865,6 @@ public class LeapYear {
 }
 39. Program to find the number of factors for a given number:
 
-java
-Copy code
 import java.util.Scanner;
 
 public class NumberOfFactors {
@@ -923,8 +889,6 @@ public class NumberOfFactors {
 }
 40. Program to check if a given number is a perfect number:
 
-java
-Copy code
 import java.util.Scanner;
 
 public class PerfectNumber {
@@ -954,8 +918,6 @@ public class PerfectNumber {
 }
 41. Program to find the square and cube of a given decimal number:
 
-java
-Copy code
 import java.util.Scanner;
 
 public class SquareAndCube {
@@ -973,8 +935,6 @@ public class SquareAndCube {
 }
 42. Program to find the nth odd number after n odd numbers:
 
-java
-Copy code
 import java.util.Scanner;
 
 public class NthOddNumber {
@@ -999,8 +959,6 @@ public class NthOddNumber {
 }
 43. Program to check if a number is an Armstrong number:
 
-java
-Copy code
 import java.util.Scanner;
 
 public class ArmstrongNumber {
@@ -1033,9 +991,6 @@ public class ArmstrongNumber {
     }
 }
 44. Program to find the sum of digits of an N-digit number (sum should be single digit):
-
-java
-Copy code
 import java.util.Scanner;
 
 public class SumOfDigits {
@@ -1065,9 +1020,6 @@ public class SumOfDigits {
     }
 }
 45. Program to find the square root of a perfect square number:
-
-java
-Copy code
 import java.util.Scanner;
 
 public class SquareRoot {
@@ -1090,9 +1042,6 @@ public class SquareRoot {
     }
 }
 46. Program to check if a number is a power of three:
-
-java
-Copy code
 import java.util.Scanner;
 
 public class PowerOfThree {
