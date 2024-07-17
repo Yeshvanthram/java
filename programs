@@ -1139,7 +1139,7 @@ public class ExceptionHandlingExample {
 public class DivisionExample {
     public static void main(String[] args) {
         try {
-            int result = divide(10, 0); // This will cause an ArithmeticException
+            int result = divide(10, 0); 
             System.out.println("Result: " + result);
         } catch (ArithmeticException e) {
             System.out.println("Error: Division by zero is not allowed.");
@@ -1154,9 +1154,8 @@ public class DivisionExample {
 public class ArrayExample {
     public static void main(String[] args) {
         int[] numbers = {1, 2, 3};
-
         try {
-            System.out.println("Accessing element: " + numbers[5]); // This will cause ArrayIndexOutOfBoundsException
+            System.out.println("Accessing element: " + numbers[5]); 
         } catch (ArrayIndexOutOfBoundsException e) {
             System.out.println("Error: Index is out of bounds.");
         }
@@ -1168,7 +1167,7 @@ public class NullPointerExample {
         String str = null;
 
         try {
-            System.out.println("Length of string: " + str.length()); // This will cause NullPointerException
+            System.out.println("Length of string: " + str.length()); 
         } catch (NullPointerException e) {
             System.out.println("Error: Cannot get the length of a null string.");
         }
