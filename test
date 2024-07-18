@@ -69,3 +69,53 @@ public class VehicleInterface {
         myCar.stop();
     }
 }
+TEST 18-07-2024
+Program 1: Handling Arithmetic Exception
+java
+public class ArithmeticExceptionExample {
+    public static void main(String[] args) {
+        try {
+            int result = 10 / 0;
+            System.out.println("Result: " + result);
+        } catch (ArithmeticException e) {
+            System.out.println("Error: Division by zero is not allowed");
+        }
+    }
+}
+Program 2: Handling ArrayIndexOutOfBoundsException
+java
+public class ArrayExceptionExample {
+    public static void main(String[] args) {
+        int[] numbers = {1, 2, 3};
+        try {
+            System.out.println("Element at index 3: " + numbers[3]);
+        } catch (ArrayIndexOutOfBoundsException e) {
+            System.out.println("Error: Index out of bounds");
+        }
+    }
+}
+Program 3: Custom Exception Example
+java
+class CustomException extends Exception {
+    public CustomException(String message) {
+        super(message);
+    }
+}
+
+public class CustomExceptionExample {
+    public static void main(String[] args) {
+        try {
+            throw new CustomException("Custom Exception occurred");
+        } catch (CustomException e) {
+            System.out.println("Error: " + e.getMessage());
+        }
+    }
+}
+
+
+
+
+
+
+
+
