@@ -1403,5 +1403,88 @@ public class BankAccount {
         scanner.close();
     }
 }
+import java.util.Scanner;
+
+public class ReverseAndAddPalindrome {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter a number: ");
+        int number = scanner.nextInt();
+        
+        int steps = 0;
+        while (!isPalindrome(number)) {
+            int reversedNumber = reverseNumber(number);
+            System.out.println(number + " + " + reversedNumber + " = " + (number + reversedNumber));
+            number = number + reversedNumber;
+            steps++;
+        }
+        
+        System.out.println("Palindrome reached after " + steps + " steps: " + number);
+        
+        scanner.close();
+    }
+    public static int reverseNumber(int num) {
+        int reversed = 0;
+        while (num > 0) {
+            reversed = reversed * 10 + num % 10;
+            num /= 10;
+        }
+        return reversed;
+    }
+    public static boolean isPalindrome(int num) {
+        int original = num;
+        int reversed = reverseNumber(num);
+        return original == reversed;
+    }
+}
+public class Customer {
+    private int accountNo;
+    private String accName;
+    private double balance;
+
+    public Customer(int accountNo, String accName, double balance) {
+        this.accountNo = accountNo;
+        this.accName = accName;
+        this.balance = balance;
+    }
+    public synchronized void deposit(double amount) {
+        balance += amount;
+        System.out.println("Deposited: " + amount + ", New Balance: " + balance);
+        notify();
+    }
+    public synchronized void withdraw(double amount) {
+        try {
+            while (balance < amount) {
+                System.out.println("Insufficient balance. Waiting for deposit...");
+                wait();
+            }
+            balance -= amount;
+            System.out.println("Withdraw operation success. Withdrawn: " + amount + ", New Balance: " + balance);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static void main(String[] args) {
+        Customer customer = new Customer(123456789, "John Doe", 10000);
+        performTransaction(customer, 11000); 
+        performTransaction(customer, 4000); 
+        performTransaction(customer, 0);     
+    }
+    public static void performTransaction(Customer customer, double withdrawAmount) {
+        System.out.println("\nAttempting to withdraw: " + withdrawAmount);
+        Thread withdrawThread = new Thread(() -> customer.withdraw(withdrawAmount));
+        withdrawThread.start();
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        double depositAmount = 5000; 
+        System.out.println("\nDepositing: " + depositAmount);
+        customer.deposit(depositAmount);
+    }
+}
 
 
