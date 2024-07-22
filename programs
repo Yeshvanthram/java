@@ -1173,4 +1173,235 @@ public class NullPointerExample {
         }
     }
 }
+import java.util.Scanner;
+
+public class DaysConverter {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter the number of days: ");
+        int days = scanner.nextInt();
+        int years = days / 365;
+        int weeks = (days % 365) / 7;
+        int remainingDays = days - (years * 365 + weeks * 7);
+        System.out.println("No. of years: " + years);
+        System.out.println("No. of weeks: " + weeks);
+        System.out.println("No. of days: " + remainingDays);
+        
+        scanner.close();
+    }
+}
+import java.util.Scanner;
+public class CollegeUsers {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter the number of student users: ");
+        int studentUsers = scanner.nextInt();
+        System.out.print("Enter the number of staff users: ");
+        int staffUsers = scanner.nextInt();
+        int nonTeachingStaff = staffUsers / 3;
+        int totalUsers = studentUsers + staffUsers + nonTeachingStaff;
+        System.out.println("\n----- College User Details -----");
+        System.out.println("Number of student users: " + studentUsers);
+        System.out.println("Number of staff users: " + staffUsers);
+        System.out.println("Number of non-teaching staff users: " + nonTeachingStaff);
+        System.out.println("Total users in the college: " + totalUsers);
+
+        scanner.close();
+    }
+}
+import java.util.Scanner;
+public class Factors {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter a positive integer: ");
+        int number = scanner.nextInt();
+        System.out.println("Number of factors of " + number + ": " + countFactors(number));
+        scanner.close();
+    }
+    public static int countFactors(int n) {
+        int count = 0;
+        for (int i = 1; i <= n; i++) {
+            if (n % i == 0) {
+                count++;
+            }
+        }
+        return count;
+    }
+}
+public class NthPrime {
+
+    public static void main(String[] args) {
+        int n = 5; 
+        int nthPrime = findNthPrime(n);
+        System.out.println("The " + n + "th prime number is: " + nthPrime);
+        int m = 10; 
+        printPrimesAfterNth(nthPrime, m);
+    }
+    public static int findNthPrime(int n) {
+        if (n <= 0) {
+            throw new IllegalArgumentException("n must be a positive integer");
+        }
+
+        int count = 0;
+        int number = 2;
+
+        while (true) {
+            if (isPrime(number)) {
+                count++;
+                if (count == n) {
+                    return number; 
+                }
+            }
+            number++;
+        }
+    }
+
+    // Function to check if a number is prime
+    public static boolean isPrime(int num) {
+        if (num <= 1) {
+            return false;
+        }
+        for (int i = 2; i <= Math.sqrt(num); i++) {
+            if (num % i == 0) {
+                return false;
+            }
+        }
+        return true;
+    }
+    public static void printPrimesAfterNth(int nthPrime, int n) {
+        System.out.println("Printing " + n + " prime numbers after the " + nthPrime + "th prime number:");
+
+        int count = 0;
+        int number = nthPrime + 1;
+
+        while (count < n) {
+            if (isPrime(number)) {
+                System.out.println(number);
+                count++;
+            }
+            number++;
+        }
+    }
+}
+import java.util.ArrayList;
+import java.util.List;
+
+public class PerfectSquaresWithDigitSum {
+
+    public static void main(String[] args) {
+        int start = 1; 
+        int end = 100;
+        
+        List<Integer> result = findPerfectSquaresWithDigitSum(start, end);
+        
+        System.out.println("Perfect squares with sum of digits less than 10 in range " + start + " to " + end + ":");
+        for (int number : result) {
+            System.out.println(number);
+        }
+    }
+    public static List<Integer> findPerfectSquaresWithDigitSum(int start, int end) {
+        List<Integer> result = new ArrayList<>();
+        
+        for (int i = start; i <= end; i++) {
+            if (isPerfectSquare(i) && digitSum(i) < 10) {
+                result.add(i);
+            }
+        }
+        
+        return result;
+    }
+    public static boolean isPerfectSquare(int n) {
+        int sqrt = (int) Math.sqrt(n);
+        return sqrt * sqrt == n;
+    }
+    public static int digitSum(int n) {
+        int sum = 0;
+        while (n > 0) {
+            sum += n % 10;
+            n /= 10;
+        }
+        return sum;
+    }
+}
+import java.util.HashSet;
+import java.util.Set;
+public class UniquePermutations {
+
+    public static void main(String[] args) {
+        String number = "122";
+        Set<String> uniquePermutations = new HashSet<>();
+        generatePermutations(number.toCharArray(), 0, uniquePermutations);
+        System.out.println("Unique permutations of " + number + ":");
+        for (String permutation : uniquePermutations) {
+            System.out.println(permutation);
+        }
+    }
+    public static void generatePermutations(char[] arr, int index, Set<String> set) {
+        if (index == arr.length - 1) {
+            set.add(new String(arr)); 
+        } else {
+            for (int i = index; i < arr.length; i++) {
+                swap(arr, index, i);
+                generatePermutations(arr, index + 1, set);
+                swap(arr, index, i);
+            }
+        }
+    }
+    public static void swap(char[] arr, int i, int j) {
+        char temp = arr[i];
+        arr[i] = arr[j];
+        arr[j] = temp;
+    }
+}
+import java.util.Scanner;
+public class BankAccount {
+    private String depositorName;
+    private int accountNumber;
+    private String accountType;
+    private double balance;
+    public BankAccount(String depositorName, int accountNumber, String accountType) {
+        this.depositorName = depositorName;
+        this.accountNumber = accountNumber;
+        this.accountType = accountType;
+        this.balance = 10000; 
+    }
+    public void displayBalance() {
+        System.out.println("Account Number: " + accountNumber);
+        System.out.println("Depositor Name: " + depositorName);
+        System.out.println("Account Type: " + accountType);
+        System.out.println("Current Balance: Rs." + balance);
+    }
+    public void deposit(double amount) {
+        if (amount > 0) {
+            balance += amount;
+            System.out.println("Deposit successful. Current Balance: Rs." + balance);
+        } else {
+            System.out.println("Invalid deposit amount.");
+        }
+    }
+    public void withdraw(double amount) {
+        if (balance - amount >= 500) {
+            balance -= amount;
+            System.out.println("Withdrawal successful. Current Balance: Rs." + balance);
+        } else {
+            System.out.println("Insufficient balance. Withdrawal failed.");
+        }
+    }
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        BankAccount account = new BankAccount("John Doe", 123456789, "Savings");
+        account.displayBalance();
+        System.out.print("\nEnter amount to deposit: Rs.");
+        double depositAmount = scanner.nextDouble();
+        account.deposit(depositAmount);
+        System.out.print("\nEnter amount to withdraw: Rs.");
+        double withdrawAmount = scanner.nextDouble();
+        account.withdraw(withdrawAmount);
+
+        scanner.close();
+    }
+}
+
 
