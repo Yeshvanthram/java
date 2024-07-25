@@ -81,7 +81,6 @@ class Child extends Parent {
 }
 public class Main {
     public static void main(String[] args) {
-        // Creating object of Child class
         Child child = new Child();
         child.even();
         child.odd();
@@ -111,10 +110,8 @@ public class Main {
     public static void main(String[] args) {
         Parent obj1 = new Parent(); 
         Parent obj2 = new Parent(20, 25); 
-
-        // Calling disp() method for both objects
-        obj1.disp(); // Will display values: a=10, b=15
-        obj2.disp(); // Will display values: a=20, b=25
+        obj1.disp();
+        obj2.disp(); 
     }
 }
 
@@ -183,9 +180,9 @@ class OverloadExample {
     }
 }
 interface Tree {
-    void fruits(String fruitType, int count); // Method with 2 parameters
-    void leaves(String leafType, int count, String color); // Method with 3 parameters
-    void flowers(String flowerType, int count, String season, String color); // Method with 4 parameters
+    void fruits(String fruitType, int count); 
+    void leaves(String leafType, int count, String color);
+    void flowers(String flowerType, int count, String season, String color); 
 }
 class Branch1 implements Tree {
     public void fruits(String fruitType, int count) {
@@ -213,15 +210,11 @@ public class Main {
     public static void main(String[] args) {
         Branch1 branch1 = new Branch1();
         Branch2 branch2 = new Branch2();
-
-        // Calling methods for Branch1
         branch1.fruits("Apple", 10);
         branch1.leaves("Maple", 50, "Green");
         branch1.flowers("Rose", 5, "Spring", "Red");
 
         System.out.println();
-
-        // Calling methods for Branch2
         branch2.fruits("Orange", 15);
         branch2.leaves("Oak", 30, "Brown");
         branch2.flowers("Tulip", 8, "Summer", "Yellow");
