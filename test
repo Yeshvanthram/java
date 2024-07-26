@@ -182,6 +182,76 @@ public class Factors {
     }
 }
 
+TEST 6
+1
+
+class BaseClass {
+    public void area(int a, int b) {
+        if (a == b) {
+            int area = a * a;
+            System.out.println("Area of the square: " + area);
+        } else {
+            System.out.println("For a square, both sides must be equal.");
+        }
+    }
+}
+class DerivedClass extends BaseClass {
+    @Override
+    public void area(int a, int b) {
+        int area = a * b;
+        System.out.println("Area of the rectangle: " + area);
+    }
+}
+public class Main {
+    public static void main(String[] args) {
+        BaseClass base = new BaseClass();
+        base.area(5, 5); 
+        base.area(5, 10); 
+        DerivedClass derived = new DerivedClass();
+        derived.area(5, 10); 
+    }
+}
+2
+class MathOperations {
+    
+    public int sum(int a, int b) {
+        return a + b;
+    }
+    
+    public int sum(int a, int b, int c) {
+        return a + b + c;
+    }
+    public double sum(double a, double b) {
+        return a + b;
+    }
+    
+    public int sum(int a, int b, int c, int d) {
+        return a + b + c + d;
+    }
+    public int sum(int b, int a) {
+        return a + b;
+    }
+    public void displaySum(int result) {
+        System.out.println("Sum: " + result);
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        MathOperations mathOps = new MathOperations();
+        int result1 = mathOps.sum(5, 10);
+        int result2 = mathOps.sum(5, 10, 15);
+        mathOps.displaySum(result1);
+        mathOps.displaySum(result2);
+        double result3 = mathOps.sum(5.5, 10.2);
+        int result4 = mathOps.sum(1, 2, 3, 4);
+        mathOps.displaySum((int) result3);
+        mathOps.displaySum(result4);
+        int result5 = mathOps.sum(10, 5);
+        mathOps.displaySum(result5);
+    }
+}
+
 
 
 
