@@ -1,0 +1,200 @@
+exp 1 zoho
+step1: Go to zoho.com.
+step 2: Log into the zoho.com.
+step 3: Select one application step.
+step4: Enter application name as property buying & rental.
+step 5: Created new application as property buying & rental.
+step 6: Select one form
+step 7: The software has been created.
+
+exp 2 VMware for type 2 hyperviser or virtualization
+STEP 1:Dowload VMware workstation and installed as type 2hypervisor.
+STEP2:Dowload ubuntu or tiny OS as iso image file.
+STEP 3: In VMware workstation->create new VM.
+STEP 4: Do the basic configuration settings.
+STEP 5: Created tiny OS virtual machine.
+STEP 6: Launch the VM.
+
+exp 3 to create virtual harddisk VMware/change hardware
+STEP 1:GOTO VM WARE WORKSTATION.
+STEP2: RIGHT CLICK THE VM AND GOTO THE SETTINGS.
+STEP 3: ADD HARDWARE WIZARD AND SELECT SCSI AND CLICK NEXT.
+STEP 4: CREATE NEW VIRTUAL DISK.
+STEP 5: SELCT THE DISK SIZE AS 2.0. AND SELCT SPLIT VIRTUAL DISK INTOMULTIFILES.
+STEP 6: GIVE NAME AND CLICK THE FINISH.
+
+exp 4 for snapshots
+GOTO VMWARE WORKSTATION.
+STEP 2: CREATE FILES ON DESKTOP.
+STEP 3: CLICK ON VM AND SELECTS SNAPSHOT-> TAKE SNAPSHOT.
+STEP 4: SNAPSHOT IS BEING DONE
+
+exp 5 Microsoft azure for virtual machine
+STEP1: CREATE AN ACCOUNT IN MICROSOFT AZURE.
+STEP2: GOTO RESOURCE GROUPAND CREATE A RESOURCE GROUP.
+STEP3: GIVE NECESSARY THINGS FOR RESOURCE GROUP.
+STEP4: CREATE AVIRTUAL NETWORK FOR TO CREATE AVIRTUALMACHINE .
+STEP5: NOW CREATE A VIRTUAL MACHINE WITH UR IPADDRESS ANUSERNAME AND
+PASSWORD FOR YOUR VIRTUAL MACINE.
+STEP6: AND YOUR VIRTUAL MACHINE IS DEPLOYED.
+STEP7: NOW CONNECT THE VIRTUAL MACHINE AND DOWNLOAD THE RDP FILETO OPEN YOUR
+WINDOWS VIRTUAL MACHINE.
+STEP8: NOW RESIZE THE VIRTUAL MACHINE SIZE.
+STEP9: CREATED ANEW WINDOWS VIRTUAL MACHINe
+
+exp 6 webapp in azure
+STEP1: FIRSTLY, GO TO APPSERVICE TO CREATE AN WEBAPP.
+STEP2: ENTER THE RESOURCE GROUPAND WEBAPP NAME AND REGIONAND SELECT THE
+LINUX OS.
+STEP3: AFTER ENTER THE ALL THE NECESSARY THINGS CLICK THEREVIEWAND
+CREATE AND CLICK THE CREATE THE WEB APP.
+
+exp 7 storage service
+STEP1: OPEN AZURE AND GOTO STORAGE ACCOUNTS AND CREATESTOROAGE
+ACCOUNT
+STEP2: ENTER THE RESOURC GROUPAND AND STORAGE ACCOUNT NAMEAND REVIEW AND
+CREATE AND CLICK TH CREATE AND YOUR STORAGE ACCOUNT WILL BE DEPLOYED
+SUCESSFULLY.
+STEP3: OUR STORAGE ACCOUNT IS CREATED.
+STEP4: GOTO STATIC WEBSITE
+STEP5: AND ENABLE AND ENTER YOUR INDEX AND ERROR HTML FILES NAMES.
+STEP6: AND GOTO STORAGE EXPLORR(REVIEW) AND AND GOTO BLOBCONTAINERS AND WEB
+AND UPLOAD THE TWO HTML FILES INIT
+STEP7: AND AGAIN RETURN TO STATIC WEBSITE AND OPEN THE PRIMARYLINK AND YOUR
+WEB PAGE IS CREATED
+
+exp 8 sql azure
+STEP1: OPEN AZURE AND GOTO STORAGE ACCOUNTS AND CREATESTOROAGE
+ACCOUNT
+STEP2: ENTER THE RESOURC GROUPAND AND STORAGE ACCOUNT NAMEAND REVIEW AND
+CREATE AND CLICK TH CREATE AND YOUR STORAGE ACCOUNT WILL BE DEPLOYED
+SUCESSFULLY.
+STEP3: OUR STORAGE ACCOUNT IS CREATED.
+STEP4: GOTO STATIC WEBSITE
+STEP5: AND ENABLE AND ENTER YOUR INDEX AND ERROR HTML FILES NAMES.
+STEP6: AND GOTO STORAGE EXPLORR(REVIEW) AND AND GOTO BLOBCONTAINERS AND WEB
+AND UPLOAD THE TWO HTML FILES INIT
+STEP7: AND AGAIN RETURN TO STATIC WEBSITE AND OPEN THE PRIMARYLINK AND YOUR
+WEB PAGE IS CREATED
+
+
+exp 9 config to install Hadoop (til step 6) for config (all)
+Step 1 – System Update
+$ sudo apt-get update
+Step 2 – Install Java and Set JAVA_HOME
+//This first thing to do is to setup the webupd8 ppa on your system. Run the following
+command and proceed.
+$ sudo apt-add-repository ppa:webupd8team/java
+$ sudo apt-get update
+//After setting up the ppa repository, update the package cache as well.
+//Install the Java 8 installer
+$ sudo apt-get install oracle-java8-installer
+// After the installation is finished, Oracle Java is setup. Run the java command again to
+check the version and vendor.
+[or]
+$ sudo apt-get install default-jdk
+$ java -version
+Step 3 – Add a dedicated Hadoop user
+$ sudo addgroup hadoop
+$ sudo adduser --ingroup hadoop hduser
+// Add hduser to sudo user group
+$ sudo adduser hduser sudo
+Step 4 – Install SSH and Create Certificates
+$ sudo apt-get install ssh
+$ su hduser
+$ ssh-keygen -t rsa -P ""
+// Set Environmental variables
+$ cat $HOME/.ssh/id_rsa.pub >> $HOME/.ssh/authorized_keys
+Step 5 – Check if SSH works
+$ ssh localhost
+Step 6 – Install Hadoop
+// Extract Hadoop-2.7.2
+$ sudo tar xvzf hadoop-2.7.2.tar.gz
+// Create a folder ‘hadoop’ in /usr/local
+$ sudo mkdir –p /usr/local/hadoop
+// Move the Hadoop folder to /usr/local/hadoop
+$ sudo mv hadoop-2.7.2 /usr/local/hadoop
+// Assigning read and write access to Hadoop folder
+$ sudo chown –R hduser:hadoop /usr/local/hadoop
+Step 7 - Modify Hadoop config files
+//Hadoop Environmental variable setting – The following files will be modified
+1. ~/.bashrc
+2. /usr/local/hadoop/hadoop-2.7.2/etc/hadoop/hadoop-env.sh
+3. /usr/local/hadoop/hadoop-2.7.2/etc/hadoop/core-site.xml
+4. /usr/local/hadoop/hadoop-2.7.2/etc/hadoop/hdfs-site.xml3
+5. /usr/local/hadoop/hadoop-2.7.2/etc/hadoop/yarn-site.xml
+6. /usr/local/hadoop/hadoop-2.7.2/etc/hadoop/mapred-site.xml.template
+$ sudo nano ~/.bashrc
+// Add the following lines at the end of the file
+Step-8 – Format Hadoop File System
+$ cd /usr/local/hadoop/hadoop-2.7.2/bin
+$ hadoop namenode -format
+Step 9 - Start Hadoop
+$ cd /usr/local/hadoop/hadoop-2.7.2/sbin
+// Starting dfs services
+$ start-dfs.sh
+// Starting mapreduce services
+$ start-yarn.sh
+$ jps
+Step 10 - Check Hadoop through web UI
+Go to browser type http://localhost:8088 – All Applications Hadoop Cluster
+Go to browser type http://localhost:50070 – Hadoop Namenode
+Step 11 - Stop Hadoop
+$ stop-dfs.sh
+$ stop-yarn.sh
+
+exp 10 for clone
+STEP 1: GO TO VMware AND GOTO MANAGE AND CLICK CLONE
+STEP 2: CLICK CLONE
+STEP 3: SELECT THE FULL CLONE
+STEP 4: AFTER CLONE AGAIN OR VM IS OPENED.
+
+
+exp 11 for launch Hadoop
+Step 1 - Open Terminal
+$ su
+hduser
+Password:
+Step 2 - Start dfs and mapreduce services
+$ cd /usr/local/hadoop/hadoop-2.7.2/sbin
+$ start-dfs.sh
+$ start-yarn.sh
+$ jps
+Step 3 - Check Hadoop through web UI
+// Go to browser type http://localhost:8088 – All Applications Hadoop Cluster
+// Go to browser type http://localhost:50070 – Hadoop Namenode
+Step 4 – Open New Terminal
+$ cd Desktop/
+$ mkdir inputdata
+$ cd inputdata/
+$ echo “Hai, Hello, How are you? How is your health?” >> hello.txt
+$ cat >> hello.txt
+Step 5 – Go back to old Terminal
+$ hadoop fs –copyFromLocal/home/hduser/Desktop/inputdata/hello.txt/folder/hduser
+// Check in hello.txt in Namenode using Web UI
+Step 6 – Download and open eclipse by creating workspace
+Create a new java project.
+Step 7 – Add jar to the project
+You need to remove dependencies by adding jar files in the hadoop source folder. Now Clickon
+Project tab and go to Properties.Under Libraries tab, click Add External JARs and select all the
+Step -8 – WordCount Program
+Create 3 java files named
+● WordCount.java
+● WordCountMapper.java
+● WordCountReducer.java
+Step 9 - Creatr JAR file
+Now Click on the Run tab and click Run-Configurations. Click on New Configuration button on the
+left-top side and Apply after filling the following properties.
+Step 10 - Export JAR file
+Now click on File tab and select Export. under Java, select Runnable Jar.
+In Launch Config – select the config fie you created in Step 9 (WordCountConfig).
+Select an export destination (lets say desktop.)
+Under Library handling, select Extract Required Libraries into generated JAR and click
+Finish.
+Right-Click the jar file, go to Properties and under Permissionstab, Check Allow executingfile
+as a program. and give Read and Write access to all the users
+Step 11 – Go back to old Terminal for Execution of WordCount Program
+Step 12 – To view resultsin old Terminal
+$hdfs dfs-cat /usr/local/hadoop/output/part-r-00000
+Step 13 - To Remove folders created using hdfs
+$ hdfs dfs-rm -R /usr/local/hadoop/output
